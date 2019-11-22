@@ -1,0 +1,65 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import LHD
+import pandas as pd
+import scipy.stats as sps
+from scipy import linalg as la
+from pylab import *
+
+data_in, colname = LHD.load_header_data('Gulf_AN05_flux')
+data_in = np.ma.masked_where(data_in = '', data_in)
+
+data_gulf = data_in[1:26, 4:30]
+#data_river = data_in[1:26, 4:30]
+
+# Using data_gulf as an illustration example
+def pca(data_gulf, k): #k is the components you want
+
+#mean of each feature
+n_samples, n_features = data_gulf.shape
+mean=np.array([np.mean(data_gulf[:, i]) for i in range(n_features)])
+
+# Extract variables
+year = data_gulf[:, 0]
+riverflow = data_gulf [:, 1]
+NO3+NO2 = data_gulf [:, 2]
+TKN = data_gulf [:, 3]
+NH3 = data_gulf [:, 4]
+TP = data_gulf [:, 5]
+OP = data_gulf [:, 6]
+Si = data_gulf [:, 7]
+TN = data_gulf [:, 8]
+deadzone = data_gulf[:, 17]
+
+# Defines the number of observations and regressionors
+nobs = len(year) # Number of observations
+nrgs = 9 # Number of regressors + 1 (1 is for the y-intercept const.) 
+
+# Create a matrix of 1s with the dimentions defined above
+regressors = np.ones((nobs, nrgs), dtype = np.float)
+
+# Populate the matrix columns with regressors (leaving column 0 as 1s) 
+regressors[:, 1] = riverflow
+regressors[:, 2] = NO3+NO2
+regressors[:, 3] = TKN
+regressors[:, 4] = NH3
+regressors[:, 5] = TP
+regressors[:, 6] = OP
+regressors[:, 7] = Si
+regressors[:, 8] = TN
+
+# Create an ordinary least squares model
+model = sm.OLS(deadzone, regressors)
+
+# Extract the constants
+constants = model.fit().params
+print (model.fit().summary())
+
+# Calculate the model fit result
+result = constants[0] + constants[1]*riverflow + constants[2]*NO3+NO2 + constants[3]* TKN + constants[4]* NH3 + constants[5]*TP + constants[6]*OP + constants[7]*Si + constants[8]*TN
+
+# Check the model residuals: Actual - prediction = residuals
+residuals = Temperature_Anomaly - result
+print(residuals)
+print(np.std(residuals, axis=0))
+
