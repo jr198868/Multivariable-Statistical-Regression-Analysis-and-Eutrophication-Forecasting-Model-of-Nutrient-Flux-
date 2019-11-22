@@ -9,6 +9,8 @@ However, a practical model for eutrophication control and prediction is very dif
 	https://toxics.usgs.gov/hypoxia/mississippi/nutrient_flux_yield_est.html
 	https://toxics.usgs.gov/hypoxia/mississippi/real_time.html
 
+![Screenshot](https://github.com/jr198868/Ran-Raymond-Jing-CV/raw/master/materials/Graphic_abstract_3.jpg)
+
 ##### Standard of Procedure:
 
 	Step 1: Data cleaning and normalization
@@ -25,5 +27,5 @@ However, a practical model for eutrophication control and prediction is very dif
 
 ##### This project is still ongoing! More microbial community and nutrient data will be collected from the United States Geological Survey (USGS) to determine microbial community patterns affecting by the nutrient dynamics by using multilinear regression analysis. 
 
-![Screenshot](https://github.com/jr198868/Ran-Raymond-Jing-CV/raw/master/materials/Graphic_abstract_3.jpg)
-![Screenshot](https://github.com/jr198868/Ran-Raymond-Jing-CV/raw/master/materials/Graphic_abstract_4.jpg)
+
+
