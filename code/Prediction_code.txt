@@ -1,0 +1,16 @@
+#Prediction
+
+data_gulf = data_in[1:26, 4:30]
+#data_river = data_in[1:26, 4:30]
+
+# Defines the number of observations and regressors 
+nobs = len(year) # Number of observations
+nrgs = 9 # Number of regressors + 1 (1 is for the y-intercept const.) 
+
+# Create a matrix of 1s with the dimentions defined above
+regressors = np.ones((nobs, nrgs), dtype = np.float)
+
+result_gulf = constants[0] + constants[1]*data_gulf[:, 2] + constants[2]*data_gulf[:, 3] + constants[3]*data_gulf[:, 5] + constants[4]*data_gulf[:, 7] + constants[5]*data_gulf[:, 7] + constants[6]*data_gulf[:, 7] + constants[7]*data_gulf[:, 7] + constants[8]*data_gulf[:, 8]
+
+# result_river = constants[0] + constants[1]*data_river[:, 2] + constants[2]*data_river [:, 3] + constants[3]*data_river[:, 5] + constants[4]*data_river[:, 7] + constants[5]*data_ river[:, 7] + constants[6]*data_ river[:, 7] + constants[7]*data_ river[:, 7] + constants[8]*data_ river[:, 8]
+
