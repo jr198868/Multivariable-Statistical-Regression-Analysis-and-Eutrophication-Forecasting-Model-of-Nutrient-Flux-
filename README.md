@@ -1,4 +1,4 @@
-#### 3.2 Multivariable Statistical Regression Analysis and Eutrophication Forecasting Model of Nutrient Flux Delivery to the Gulf of Mexico
+#### Multivariable Statistical Regression Analysis and Eutrophication Forecasting Model of Nutrient Flux Delivery to the Gulf of Mexico
 
 ##### ABSTRACT:
 Recently, excessive amounts of nutrients due to human activity in the Midwestern United States discharge into the Gulf of Mexico through the tributaries of the Mississippi River. These excessive amounts of nutrients have contributed to significant changes in the Gulf’s ecosystems. Eutrophication phenomena in the Gulf of Mexico were first recorded in the early 1970s, which originally occurred every 3 years (Elser & Bennett, 2011). However, eutrophication now occurs annually and the dead zone area is achieving 8,776 square miles (Konopacky & Ristino, 2017). Therefore, the development of a sophisticated water quality model is an urgent priority for eutrophication control and prediction. 
